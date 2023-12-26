@@ -20,7 +20,7 @@ function active_build() {
   scheme_dirname=$(ls -d *.xcodeproj)
   scheme_name=${scheme_dirname%%.*}
 
-  xcodebuild archive -workspace Runner.xcworkspace -scheme $scheme_name -configuration $NACTIVE_ENV -archivePath build/Runner.xcarchiv
+  xcodebuild archive -workspace Runner.xcworkspace -scheme $scheme_name -configuration $NACTIVE_ENV -archivePath build/Runner.xcarchive
   check_ok "生成 xcarchive 文件失败"
 
   # 导出 .ipa 文件
